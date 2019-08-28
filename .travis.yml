@@ -15,4 +15,4 @@ install:
   - sudo unzip terraform.zip -d /usr/bin && rm -f terraform.zip
 
 script:
-  - ./bin/task test build
+  - ./bin/task test
