@@ -1,6 +1,6 @@
 ## Terraform init
 
-[![Build Status](https://travis-ci.com/telia-oss/terraform-aws-terraform-init.svg?branch=master)](https://travis-ci.com/telia-oss/terraform-aws-terraform-init)
+[![workflow](https://github.com/telia-oss/terraform-aws-terraform-init/workflows/workflow/badge.svg)](https://github.com/telia-oss/terraform-aws-terraform-init/actions)
 
 A module for setting up a state bucket, lock table and KMS key on AWS. These resources should never be deleted, so storing state
 for this deployment is not strictly necessary. Creates the following resources:
