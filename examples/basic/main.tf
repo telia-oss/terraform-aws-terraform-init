@@ -3,8 +3,8 @@ terraform {
 }
 
 provider "aws" {
-  version = ">= 2.17"
-  region  = "${var.region}"
+  version = ">= 2.27"
+  region  = var.region
 }
 
 data "aws_caller_identity" "current" {}
