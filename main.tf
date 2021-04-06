@@ -18,11 +18,11 @@ resource "aws_s3_bucket" "state" {
 }
 
 resource "aws_dynamodb_table" "lock" {
-  name           = "${var.name_prefix}-terraform-state"
+  name = "${var.name_prefix}-terraform-state"
 
-  billing_mode   = "PAY_PER_REQUEST"
+  billing_mode = "PAY_PER_REQUEST"
 
-  hash_key       = "LockID"
+  hash_key = "LockID"
 
   attribute {
     name = "LockID"
