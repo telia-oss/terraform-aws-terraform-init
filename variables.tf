@@ -11,3 +11,7 @@ variable "tags" {
   default     = {}
 }
 
+variable "kms_key_policy" {
+  description = "(Optional) A valid KMS policy JSON document."
+  default     = null
+}

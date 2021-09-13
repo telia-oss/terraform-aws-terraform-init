@@ -40,6 +40,7 @@ resource "aws_dynamodb_table" "lock" {
 resource "aws_kms_key" "encrypt" {
   description             = "Terraform state KMS key."
   deletion_window_in_days = 30
+  policy                  = var.kms_key_policy
   tags = merge(
     var.tags,
     {
@@ -52,4 +53,3 @@ resource "aws_kms_alias" "encrypt-alias" {
   name          = "alias/${var.name_prefix}-terraform-state-encryption-key"
   target_key_id = aws_kms_key.encrypt.key_id
 }
-
