@@ -17,6 +17,15 @@ resource "aws_s3_bucket" "state" {
   )
 }
 
+resource "aws_s3_bucket_public_access_block" "state" {
+  bucket = aws_s3_bucket.state.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  restrict_public_buckets = true
+  ignore_public_acls      = true
+}
+
 resource "aws_dynamodb_table" "lock" {
   name = "${var.name_prefix}-terraform-state"
 
