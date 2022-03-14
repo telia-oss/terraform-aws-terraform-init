@@ -5,16 +5,19 @@ resource "aws_s3_bucket" "state" {
   bucket = "${var.name_prefix}-terraform-state"
   acl    = "private"
 
-  versioning {
-    enabled = true
-  }
-
   tags = merge(
     var.tags,
     {
       "Name" = "${var.name_prefix}-terraform-state"
     },
   )
+}
+
+resource "aws_s3_bucket_versioning" "state" {
+  bucket = aws_s3_bucket.state.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "state" {
