@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
-        with: { terraform_version: '1.4.4' }
+        with: { terraform_version: '1.5.6' }
 
       - name: Install Task
         uses: arduino/setup-task@v1
